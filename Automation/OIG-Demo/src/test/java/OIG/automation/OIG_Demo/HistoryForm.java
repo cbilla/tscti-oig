@@ -46,13 +46,17 @@ public class HistoryForm {
 
 	@BeforeMethod
 	public void setUp() throws TransformerException, InterruptedException {
-		String filepath = new java.io.File("").getAbsolutePath() + "/src/resource/chromedriver.exe";
-		System.setProperty("webdriver.chrome.driver", filepath);
+		//String filepath = new java.io.File("").getAbsolutePath() + "/src/resource/chromedriver.exe";
+		//System.setProperty("webdriver.chrome.driver", filepath);
 		ChromeOptions options = new ChromeOptions();
-	    options.addArguments("--remote-allow-origins=*");
-	    options.addArguments("--whitelisted-ips=''");
-		options.setExperimentalOption("useAutomationExtension", false);
-	    driver = new ChromeDriver(options);
+	    //options.addArguments("--remote-allow-origins=*");
+	  //  options.addArguments("--whitelisted-ips=''");
+		//options.setExperimentalOption("useAutomationExtension", false);
+		ChromeOptions options = new ChromeOptions();
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                 options.addArguments("--headless");
+	        driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		js = (JavascriptExecutor) driver;	
