@@ -52,7 +52,7 @@ public class HistoryForm {
 	    //options.addArguments("--remote-allow-origins=*");
 	  //  options.addArguments("--whitelisted-ips=''");
 		//options.setExperimentalOption("useAutomationExtension", false);
-		ChromeOptions options = new ChromeOptions();
+		//ChromeOptions options = new ChromeOptions();
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
                  options.addArguments("--headless");
